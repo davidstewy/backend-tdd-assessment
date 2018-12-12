@@ -11,7 +11,6 @@ import argparse
 
 def create_parser():
     """Creates and returns an argparse cmd line option parser"""
-    # Create and define your parser engine here, but DONT PARSE.
     parser = argparse.ArgumentParser(
         description="Perform transformation on input text.")
     parser.add_argument("text", help="text to be manipulated")

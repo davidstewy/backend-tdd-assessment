@@ -12,8 +12,6 @@ class TestEcho(unittest.TestCase):
         self.parser = echo.create_parser()
 
     def test_help(self):
-        """ Running the program without arguments should show usage. """
-
         # Run the command `python ./echo.py -h` in a separate process, then
         # collect it's output.
         process = subprocess.Popen(
@@ -34,9 +32,7 @@ class TestEcho(unittest.TestCase):
     def test_upper_long(self):
         arg_list = ["--upper", "hello"]
         namespace = self.parser.parse_args(arg_list)
-        # W as the '-u' attr
         self.assertTrue(namespace.upper)
-        # Did the program transform our text to uppercase?
         self.assertEquals(echo.main(arg_list), "HELLO")
 
     def test_lower_short(self):
